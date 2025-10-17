@@ -1,0 +1,34 @@
+{
+    "galleryItems": [
+        {
+            "id": 301,
+            "imageUrl": "images/cul.jpg",
+            "caption": "Cultural Gala Night 2024"
+        },
+        {
+            "id": 302,
+            "imageUrl": "images/meet.jpg",
+            "caption": "New Students Orientation 2023"
+        },
+        {
+            "id": 303,
+            "imageUrl": "images/chris.jpg",
+            "caption": "Annual Football Tournament Final"
+        },
+        {
+            "id": 304,
+            "imageUrl": "images/chris.jpg",
+            "caption": "Union Leadership Retreat"
+        },
+        {
+            "id": 305,
+            "imageUrl": "images/ind.jpg",
+            "caption": "South Sudan Independence Day"
+        },
+        {
+            "id": 306,
+            "imageUrl": "images/gra.jpg",
+            "caption": "Graduation Celebration for Alumni"
+        }
+    ]
+}

@@ -1,0 +1,1067 @@
+{
+    "members": [
+        {
+            "id": 1,
+            "name": "Abiar Manyok",
+            "major": "Software Engineering",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": true,
+            "leadershipRole": "President",
+            "leaderRank": 1,
+            "profilePic": "images/avatars/abiar_manyok_awuol.jpg",
+            "whatsapp": null
+        },
+        {
+            "id": 2,
+            "name": "Abraham Mawut",
+            "major": "Pharmacy",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Ajang Garang",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Akoch Kiir",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Akot Rebeka",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Aliap Angelo",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Alier Athiak",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Aluong Reng",
+            "major": "Public Health",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Ann Nyangun",
+            "major": "Physiotherapy",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Arek Kuot",
+            "major": "Chemical Engineering",
+            "entryYear": "2023",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Aweer",
+            "major": "Electrical and Computer Engineering",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Ayii Sigin",
+            "major": "Chemical Engineering",
+            "entryYear": "2022",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Ayual Moijok",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Ayup Mijok",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Bakindo Justin",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Barnaba Diing",
+            "major": "Natural Resource Management",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Bhor Simon",
+            "major": "Midwifery",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Bol Bol",
+            "major": "Civil Engineering",
+            "entryYear": "2024",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Buay Mathew",
+            "major": "Epidemiology",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Buomkuoth John",
+            "major": "Computer Science",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Chol Peter",
+            "major": "Medicine",
+            "entryYear": "2021",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 22,
+            "name": "Chol Pourac",
+            "major": "Software",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 23,
+            "name": "Christin",
+            "major": "Epidemiology",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 24,
+            "name": "Christine Kebi",
+            "major": "Anesthesia",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 25,
+            "name": "Christopher Malok",
+            "major": "Computer Science",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 26,
+            "name": "Chuol Dol",
+            "major": "Peace and Security",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 27,
+            "name": "Daniel Nyok",
+            "major": "Medicine",
+            "entryYear": "2021",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 28,
+            "name": "David",
+            "major": "Public Health",
+            "entryYear": "2021",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 29,
+            "name": "Nyuong Koyok",
+            "major": "Medicine",
+            "entryYear": "2021",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 30,
+            "name": "Deng Kuch",
+            "major": "Plant Science",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 31,
+            "name": "Deng Lem",
+            "major": "Pharmacy",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 32,
+            "name": "Deng Marial",
+            "major": "Civil Engineering",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 33,
+            "name": "Deng Kuol",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 34,
+            "name": "Denis William",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 35,
+            "name": "Dut Garang",
+            "major": "Natural Resource Management",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 36,
+            "name": "Eric Wani",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 37,
+            "name": "Fajol Dier",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 38,
+            "name": "Garang Deng",
+            "major": "Logistics and Supply Chain",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 39,
+            "name": "Gatluak Bichok",
+            "major": "Peace and Security",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 40,
+            "name": "Gatreak Jal",
+            "major": "Food Science",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 41,
+            "name": "Gol Buai",
+            "major": "Civil Engineering",
+            "entryYear": "2023",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 42,
+            "name": "Goy Chuol",
+            "major": "Law",
+            "entryYear": "2023",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 43,
+            "name": "Idier Chagai",
+            "major": "Biomedical Engineering",
+            "entryYear": "2024",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 44,
+            "name": "Jackson Unzima",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 45,
+            "name": "James Agoth",
+            "major": "Civil Engineering",
+            "entryYear": "2024",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 46,
+            "name": "James Wuor",
+            "major": "Computer Science",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 47,
+            "name": "Jennifer Apet",
+            "major": "Pharmacy",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 48,
+            "name": "John Dictor",
+            "major": "Public Health and Clinical Medicine",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 49,
+            "name": "John Gum",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 50,
+            "name": "Judith Joseph",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 51,
+            "name": "Kade Specioza",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 52,
+            "name": "Kaman Abraham",
+            "major": "Pharmacy",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 53,
+            "name": "Katar Banisto",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 54,
+            "name": "Kenedy John",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 55,
+            "name": "Kiden Faith",
+            "major": "Physiotherapy",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 56,
+            "name": "Kiir Keer",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 57,
+            "name": "Kon Deng",
+            "major": "Banking and Finance",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 58,
+            "name": "Lam Gatkuoth",
+            "major": "Computer Science",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 59,
+            "name": "Lawrence Ruben",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 60,
+            "name": "Lueth Chol",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 61,
+            "name": "Lueth Awan",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 62,
+            "name": "Mabior Maduot",
+            "major": "Agribusiness and value Chain Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 63,
+            "name": "Machot Achuoth",
+            "major": "Material Science",
+            "entryYear": "2024",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 64,
+            "name": "Majok Deng",
+            "major": "Civil Engineering",
+            "entryYear": "2024",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 65,
+            "name": "Majur James",
+            "major": "Pharmacy",
+            "entryYear": "2021",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 66,
+            "name": "Malish Victor",
+            "major": "Medicine",
+            "entryYear": "2024",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 67,
+            "name": "Mami John",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 68,
+            "name": "Manyang Mading",
+            "major": "Medicine",
+            "entryYear": "2023",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 69,
+            "name": "Mary Clement",
+            "major": "Natural Resource Management",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 70,
+            "name": "Mary Ojulu",
+            "major": "Medical Laboratory",
+            "entryYear": "2022",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 71,
+            "name": "Mawut Dok",
+            "major": "Medicine",
+            "entryYear": "2024",
+            "programDuration": "6",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 72,
+            "name": "Monyjok Tong",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 73,
+            "name": "Moses Ayuel",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 74,
+            "name": "Mun Tet",
+            "major": "Accounting and Finance",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 75,
+            "name": "Nyabol Kulang",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 76,
+            "name": "Nyaboth Whan",
+            "major": "Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 77,
+            "name": "Nyakan Peter",
+            "major": "Software Engineering",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 78,
+            "name": "Nyamal Chuol",
+            "major": "Computer Science",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 79,
+            "name": "Nyamal Tut",
+            "major": "Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 80,
+            "name": "Nyamay Lony",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 81,
+            "name": "Nyamiri Gatluak",
+            "major": "Social Work",
+            "entryYear": "2023",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 82,
+            "name": "Nyangak Sisco",
+            "major": "Agribusiness and Value Chain Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 83,
+            "name": "Nyanwel Deng",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 84,
+            "name": "Nyawiir Atek",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 85,
+            "name": "Nyayup Kang",
+            "major": "Natural Resource Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 86,
+            "name": "Nyok Adhala",
+            "major": "Chemical Engineering",
+            "entryYear": "2022",
+            "programDuration": "5",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 87,
+            "name": "Nyok Miakol",
+            "major": "Agribusiness and Value Chain Management",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 88,
+            "name": "Pio Okumu",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 89,
+            "name": "Poch William",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 90,
+            "name": "Rita Phillip",
+            "major": "Human Reproduction",
+            "entryYear": "2024",
+            "programDuration": "4",
+            "role": "Student",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 91,
+            "name": "Ruth Ayaa",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+        {
+            "id": 92,
+            "name": "Salama Arkangelo",
+            "major": "Freshman",
+            "entryYear": "2025",
+            "programDuration": "1",
+            "role": "Freshman",
+            "isLeader": false,
+            "profilePic": "images/avatar-placeholder.jpg"
+        },
+    {
+        "id": 93,
+        "name": "Samson Lasu",
+        "major": "Freshman",
+        "entryYear": "2025",
+        "programDuration": "1",
+        "role": "Freshman",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 94,
+        "name": "Samuel John",
+        "major": "Freshman",
+        "entryYear": "2025",
+        "programDuration": "1",
+        "role": "Freshman",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 95,
+        "name": "Santino Laul",
+        "major": "Management",
+        "entryYear": "2025",
+        "programDuration": "2",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 96,
+        "name": "Sijin Wal",
+        "major": "Electrical and Computer Engineering",
+        "entryYear": "2025",
+        "programDuration": "4",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 97,
+        "name": "Stephen Tesloach",
+        "major": "Medicine",
+        "entryYear": "2025",
+        "programDuration": "2",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 98,
+        "name": "Sunday Mandera",
+        "major": "Medicine",
+        "entryYear": "2025",
+        "programDuration": "4",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 99,
+        "name": "Tijwock Pinywock",
+        "major": "Logistics and Supply Chain",
+        "entryYear": "2025",
+        "programDuration": "2",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 100,
+        "name": "Timothy Deng",
+        "major": "Anesthesia",
+        "entryYear": "2025",
+        "programDuration": "4",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 101,
+        "name": "Tut Tap",
+        "major": "Epidemiology",
+        "entryYear": "2025",
+        "programDuration": "1",
+        "role": "Freshman",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 102,
+        "name": "Victoria Mutah",
+        "major": "Freshman",
+        "entryYear": "2025",
+        "programDuration": "1",
+        "role": "Freshman",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 103,
+        "name": "Wal Mawien",
+        "major": "Economic",
+        "entryYear": "2025",
+        "programDuration": "4",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 104,
+        "name": "Wie Tutlieth",
+        "major": "Chemical Engineering",
+        "entryYear": "2025",
+        "programDuration": "5",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 105,
+        "name": "William Dut",
+        "major": "Data Science",
+        "entryYear": "2025",
+        "programDuration": "2",
+        "role": "Student",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    },
+    {
+        "id": 106,
+        "name": "Zereda Delila",
+        "major": "Agribusiness and Value Chain",
+        "entryYear": "2025",
+        "programDuration": "1",
+        "role": "Freshman",
+        "isLeader": false,
+        "profilePic": "images/avatar-placeholder.jpg"
+    }
+    ]
+}

@@ -1,0 +1,275 @@
+/* --- Custom Styles and Color Palette --- */
+:root {
+    /* Light Mode Variables (Default) */
+    --primary-blue: #0A3D62;
+    --secondary-gold: #FBC531;
+    --light-bg: #F8F9FA;
+    --page-bg: #F0F5F9;
+    --card-bg: #ffffff;
+    --text-color: var(--primary-blue);
+    --text-muted: #6b7280; /* gray-500 */
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    /* Transparency for dropdown */
+    --dropdown-bg-rgba: rgba(255, 255, 255, 0.9);
+}
+
+/* Dark Mode Overrides */
+.dark {
+    --primary-blue: #90CAF9; /* Light Blue for dark contrast */
+    --secondary-gold: #FFD700; /* Brighter Gold */
+    --page-bg: #121212;
+    --card-bg: #1f1f1f;
+    --text-color: #E0E0E0;
+    --text-muted: #A0A0A0;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --dropdown-bg-rgba: rgba(31, 31, 31, 0.9); /* Transparent dark background */
+}
+.dark .header-bg { background-color: #212121; }
+.dark .card { box-shadow: 0 0 20px 0 var(--shadow-color); }
+.dark .bg-gold-light { background-color: #333; }
+.dark .nav-link-button::after { background-color: var(--secondary-gold); }
+
+
+/* --- Tailwind Configuration Replacement Classes --- */
+.header-bg { background-color: var(--primary-blue); color: white; }
+.text-gold { color: var(--secondary-gold); }
+.bg-gold { background-color: var(--secondary-gold); }
+.bg-gold-light { background-color: #fde68a; } /* A lighter shade for hover etc */
+.text-primary-blue { color: var(--primary-blue); }
+.bg-primary-blue { background-color: var(--primary-blue); }
+.border-gold { border-color: var(--secondary-gold); }
+
+
+/* --- Global Resets & Theme Application --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--text-color); /* Set default text color based on theme */
+    background-color: var(--page-bg); /* Ensure consistent background fill */
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden; /* Prevent horizontal scrolling on the page */
+    scroll-behavior: smooth; /* Set CSS smooth scroll behavior */
+}
+body::after {
+    content: '';
+    display: block;
+    height: 1px;
+}
+main {
+    padding-top: 5rem; /* CRITICAL: Offset for fixed header (assuming header height is ~5rem) */
+    overflow: hidden;
+}
+
+/* 🌟 FIXED HEADER STYLING 🌟 */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50; /* Ensure it stays on top of page content */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for shadow/color changes */
+}
+
+/* Scroll-triggered shadow effect applied by JavaScript */
+.fixed-header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+}
+.dark .fixed-header.scrolled {
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+}
+
+
+/* --- Navigation & Dropdown Styling --- */
+
+/* Custom underline animation for nav links */
+.nav-link-button {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-link-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--secondary-gold);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.nav-link-button:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Transparent Dropdown CSS */
+#community-menu {
+    background-color: var(--dropdown-bg-rgba) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(10, 61, 98, 0.1); /* Subtle border */
+}
+#community-menu a {
+    color: var(--text-color);
+}
+#community-menu a:hover {
+    background-color: var(--page-bg);
+}
+.dark #community-menu a:hover {
+    background-color: #333333;
+}
+
+/* Smooth transition for dropdowns */
+.dropdown-transition {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropdown-hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    display: none; 
+}
+.dropdown-visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block; 
+}
+
+
+/* --- Card and Component Styling --- */
+
+/* General card styling for a consistent look */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 20px -3px var(--shadow-color), 0 6px 10px -3px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero section background pattern */
+.hero-section {
+    background-color: var(--card-bg);
+    background-image: radial-gradient(var(--primary-blue) 0.5px, transparent 0.5px); 
+    background-size: 15px 15px;
+}
+.dark .hero-section {
+    background-image: radial-gradient(var(--primary-blue) 0.5px, transparent 0.5px);
+}
+
+/* Statistics Card */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    border-bottom: 5px solid var(--secondary-gold);
+}
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(251, 197, 49, 0.2) 0%, rgba(10, 61, 98, 0.2) 100%);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+.stat-card-content {
+    position: relative;
+    z-index: 2;
+}
+.stat-card:hover::after {
+    opacity: 0.25;
+}
+
+/* Social Media Icon Animation */
+.footer-social-link {
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-social-link:hover {
+    color: var(--secondary-gold);
+    transform: scale(1.15) translateY(-2px);
+}
+
+
+/* --- Community Filter Styling --- */
+
+/* Utility class to visually differentiate student types */
+.type-Undergraduate { background-color: #e0f2fe; border-color: #93c5fd; }
+.type-Final-Year { background-color: #fef9c3; border-color: #fde047; }
+.type-Alumni { background-color: #f3f4f6; border-color: #d1d5db; }
+.type-Graduate-Student { background-color: #d1fae5; border-color: #6ee7b7; }
+.type-Faculty { background-color: #fae8ff; border-color: #d8b4fe; }
+    
+.dark .type-Undergraduate { background-color: rgba(30, 60, 90, 0.5); border-color: #93c5fd; }
+.dark .type-Final-Year { background-color: rgba(90, 60, 30, 0.5); border-color: #fde047; }
+.dark .type-Alumni { background-color: rgba(50, 50, 50, 0.5); border-color: #d1d5db; }
+.dark .type-Graduate-Student { background-color: rgba(30, 90, 60, 0.5); border-color: #6ee7b7; }
+.dark .type-Faculty { background-color: rgba(60, 30, 90, 0.5); border-color: #d8b4fe; }
+
+/* Final Year Highlight */
+.final-year-glow {
+    border: 2px solid var(--secondary-gold) !important;
+    box-shadow: 0 0 15px 3px rgba(251, 197, 49, 0.7);
+    position: relative;
+}
+.final-year-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--secondary-gold);
+    color: var(--primary-blue);
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Modal Fixes */
+.dark .bg-gray-100 {
+    background-color: #374151;
+}
+.dark .bg-gray-100 p span {
+    color: #e0e0e0;
+}
+
+
+/* --- GALLERY CAROUSEL STYLING --- */
+
+/* Required for horizontal sliding/snapping */
+#gallery-list {
+    overflow-x: scroll;
+    /* Enable horizontal mandatory snapping */
+    scroll-snap-type: x mandatory; 
+    
+    /* Hide scrollbar visually across different browsers */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+#gallery-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styles for the individual gallery items */
+.gallery-item {
+    /* Critical: Prevents flex items from shrinking */
+    flex-shrink: 0;
+    /* The Tailwind `w-full` class (applied in index.html) will ensure the width of one viewport */
+    scroll-snap-align: start; /* Snap the left edge of the item to the scroll container's left edge */
+}

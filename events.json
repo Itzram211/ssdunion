@@ -1,0 +1,36 @@
+{
+    "events": [
+        {
+            "id": 201,
+            "title": "Freshers' Orientation Day",
+            "date": "2025-11-20T10:00:00",
+            "location": "Main Campus Auditorium",
+            "description": "A warm welcome for new South Sudanese students with campus tours and essential information sessions.",
+            "registrationLink": "https://forms.example.com/freshers"
+        },
+        {
+            "id": 202,
+            "title": "Cultural Gala Night",
+            "date": "2025-12-15T18:30:00",
+            "location": "Student Union Hall",
+            "description": "Celebrate South Sudanese culture with music, dance, fashion, and traditional food.",
+            "registrationLink": "https://forms.example.com/gala"
+        },
+        {
+            "id": 203,
+            "title": "South Sudan independence Day Celebration",
+            "date": "2025-09-05T14:00:00",
+            "location": "Business College, Room 101",
+            "description": "Celebrate South Sudanese culture with music, dance, fashion, and traditional food..",
+            "registrationLink": null
+        },
+        {
+            "id": 204,
+            "title": "Annual Election & Handover",
+            "date": "2026-01-25T09:00:00",
+            "location": "New Library Conference Room",
+            "description": "Election of new union officials and official handover ceremony.",
+            "registrationLink": "https://forms.example.com/election"
+        }
+    ]
+}
