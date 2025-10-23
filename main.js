@@ -1,4 +1,4 @@
-/**
+ /**
  * main.js
  * South Sudan Student Union - Jimma University
  *
@@ -17,7 +17,7 @@ const STATS_DATA = {
     // These numbers will be updated by the fetched community data
     totalMembers: 0,
     majorCount: 0, // Calculated from unique majors
-    alumni: 0,    // Calculated from community data
+    alumni: 0, // Calculated from community data
     annualEvents: 4, // Placeholder, can be updated from events.json
 };
 
@@ -79,7 +79,9 @@ function initializeTheme() {
  * @param {HTMLElement} button The button element that was clicked.
  */
 function copyToClipboard(elementId, button) {
-    const textToCopy = document.getElementById(elementId).textContent.replace(/\s/g, '');
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const textToCopy = el.textContent.replace(/\s/g, '');
     // Using execCommand for better compatibility inside iframes
     const textarea = document.createElement('textarea');
     textarea.value = textToCopy;
@@ -87,11 +89,13 @@ function copyToClipboard(elementId, button) {
     textarea.select();
     try {
         document.execCommand('copy');
-        const originalText = button.textContent;
-        button.textContent = 'Copied!';
-        setTimeout(() => {
-            button.textContent = originalText;
-        }, 1500);
+        const originalText = button ? button.textContent : '';
+        if (button) {
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1500);
+        }
     } catch (err) {
         console.error('Could not copy text: ', err);
     }
@@ -105,9 +109,11 @@ function copyToClipboard(elementId, button) {
  * @param {Event} event The click event.
  */
 function toggleDropdown(menuId, event) {
-    event.stopPropagation();
+    if (event && event.stopPropagation) event.stopPropagation();
     const menu = document.getElementById(menuId);
     const icon = document.getElementById('dropdown-icon');
+
+    if (!menu) return;
 
     const isActive = menu.classList.contains('dropdown-active');
 
@@ -150,19 +156,20 @@ function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const openIcon = document.getElementById('menu-icon-open');
     const closeIcon = document.getElementById('menu-icon-close');
+    if (!menu) return;
     const isHidden = menu.classList.toggle('hidden');
 
     if (isHidden) {
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
+        if (openIcon) openIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
         // Also close mobile community dropdown if open
         const communityMenu = document.getElementById('mobile-community-menu');
         if (communityMenu && !communityMenu.classList.contains('hidden')) {
             toggleMobileCommunityDropdown(false);
         }
     } else {
-        openIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
+        if (openIcon) openIcon.classList.add('hidden');
+        if (closeIcon) closeIcon.classList.remove('hidden');
     }
 }
 
@@ -173,9 +180,10 @@ function closeMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const openIcon = document.getElementById('menu-icon-open');
     const closeIcon = document.getElementById('menu-icon-close');
+    if (!menu) return;
     menu.classList.add('hidden');
-    openIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
+    if (openIcon) openIcon.classList.remove('hidden');
+    if (closeIcon) closeIcon.classList.add('hidden');
     // Also close mobile community dropdown if open
     const communityMenu = document.getElementById('mobile-community-menu');
     if (communityMenu && !communityMenu.classList.contains('hidden')) {
@@ -190,14 +198,15 @@ function closeMobileMenu() {
 function toggleMobileCommunityDropdown(shouldToggle = true) {
     const menu = document.getElementById('mobile-community-menu');
     const icon = document.getElementById('mobile-dropdown-icon');
+    if (!menu) return;
     
     if (shouldToggle) {
         menu.classList.toggle('hidden');
-        icon.classList.toggle('rotate-180');
+        if (icon) icon.classList.toggle('rotate-180');
     } else if (menu && !menu.classList.contains('hidden')) {
         // Force close
         menu.classList.add('hidden');
-        icon.classList.remove('rotate-180');
+        if (icon) icon.classList.remove('rotate-180');
     }
 }
 
@@ -205,25 +214,28 @@ function toggleMobileCommunityDropdown(shouldToggle = true) {
  * Opens the bank details modal.
  */
 function openBankDetailsModal() {
-    document.getElementById('bank-details-modal').classList.remove('hidden');
+    const modal = document.getElementById('bank-details-modal');
+    if (modal) modal.classList.remove('hidden');
 }
 
 /**
  * Closes the bank details modal.
  */
 function closeBankDetailsModal() {
-    document.getElementById('bank-details-modal').classList.add('hidden');
+    const modal = document.getElementById('bank-details-modal');
+    if (modal) modal.classList.add('hidden');
 }
 
 /**
  * Opens a modal with detailed member information.
- * @param {number} memberId The ID of the member to show.
+ * @param {number|string} memberId The ID of the member to show.
  */
 function openMemberModal(memberId) {
-    const member = allMembers.find(m => m.id === memberId);
+    const member = allMembers.find(m => m.id === memberId || String(m.id) === String(memberId));
     if (!member) return;
 
     const modalContainer = document.getElementById('member-modal-container');
+    if (!modalContainer) return;
     
     const modalHtml = `
         <div id="member-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-[300]">
@@ -234,8 +246,8 @@ function openMemberModal(memberId) {
                     <h3 class="text-3xl font-extrabold text-primary-blue mb-1">${member.name}</h3>
                     <p class="text-lg font-semibold text-text-color mb-3">${member.role} - ${member.category}</p>
                     <div class="space-y-2 text-left">
-                        <p class="text-text-muted"><i class="fas fa-book-open w-5 text-gold mr-2"></i><strong>Major:</strong> ${member.major}</p>
-                        <p class="text-text-muted"><i class="fas fa-calendar-alt w-5 text-gold mr-2"></i><strong>Entry Year:</strong> ${member.entryYear}</p>
+                        <p class="text-text-muted"><i class="fas fa-book-open w-5 text-gold mr-2"></i><strong>Major:</strong> ${member.major || 'N/A'}</p>
+                        <p class="text-text-muted"><i class="fas fa-calendar-alt w-5 text-gold mr-2"></i><strong>Entry Year:</strong> ${member.entryYear || 'N/A'}</p>
                         ${member.graduationYear ? `<p class="text-text-muted"><i class="fas fa-award w-5 text-gold mr-2"></i><strong>Graduation:</strong> ${member.graduationYear}</p>` : ''}
                         <p class="text-text-muted"><i class="fas fa-map-marked-alt w-5 text-gold mr-2"></i><strong>State:</strong> ${member.state || 'South Sudan'}</p>
                         ${member.whatsapp ? `<a href="https://wa.me/${member.whatsapp.replace(/\D/g, '')}" target="_blank" class="text-text-muted hover:text-green-500 flex items-center mt-3"><i class="fab fa-whatsapp w-5 text-green-500 mr-2"></i><strong>WhatsApp:</strong> ${member.whatsapp}</a>` : ''}
@@ -253,8 +265,11 @@ function openMemberModal(memberId) {
  * Closes the member detail modal.
  */
 function closeMemberModal() {
-    document.getElementById('member-modal-container').classList.add('hidden');
-    document.getElementById('member-modal-container').innerHTML = ''; // Clear content
+    const container = document.getElementById('member-modal-container');
+    if (container) {
+        container.classList.add('hidden');
+        container.innerHTML = ''; // Clear content
+    }
 }
 
 /**
@@ -279,7 +294,7 @@ function openImageModal(imageUrl, caption) {
                     onerror="this.onerror=null;this.src='images/placeholder-gallery.jpg';"
                     class="w-full h-auto max-h-[85vh] object-contain rounded-xl shadow-2xl">
                 <div class="bg-card p-3 rounded-b-xl text-center">
-                    <p class="text-text-color text-sm">${caption}</p>
+                    <p class="text-text-color text-sm">${caption || ''}</p>
                 </div>
             </div>
         </div>
@@ -391,6 +406,7 @@ async function fetchData(path) {
  * @returns {string} The calculated category.
  */
 function getStudentCategory(member) {
+    if (!member) return 'Undergraduate';
     if (member.graduationYear) {
         return 'Alumni';
     }
@@ -434,28 +450,37 @@ async function fetchAndRenderAllData() {
     ]);
 
     // Process and render community/leadership
-    if (communityData) {
+    const communityListEl = document.getElementById('community-list');
+    const leadershipListEl = document.getElementById('leadership-list');
+
+    if (communityData && Array.isArray(communityData.members)) {
         processCommunityData(communityData.members);
         renderLeadership(communityData.members);
     } else {
-        document.getElementById('community-list').innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load community data.</p>';
-        document.getElementById('leadership-list').innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load leadership data.</p>';
+        // Defensive: only manipulate DOM if elements exist
+        if (communityListEl) communityListEl.innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load community data.</p>';
+        if (leadershipListEl) leadershipListEl.innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load leadership data.</p>';
+        // Ensure internal state is empty to avoid previous stale data
+        allMembers = [];
+        filteredMembers = [];
     }
 
     // Process and render events
-    if (eventsData) {
+    if (eventsData && Array.isArray(eventsData.events)) {
         renderEvents(eventsData.events);
         // Update annualEvents stat
         STATS_DATA.annualEvents = eventsData.events.length;
     } else {
         const placeholder = document.getElementById('event-list-container');
         if (placeholder) placeholder.innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load event schedule.</p>';
+        // keep STATS_DATA.annualEvents as-is or set to 0
+        STATS_DATA.annualEvents = eventsData && Array.isArray(eventsData.events) ? eventsData.events.length : 0;
     }
 
     // Process and render gallery
-    const galleryItems = galleryData && galleryData.galleryItems ? galleryData.galleryItems : [];
+    const galleryItems = (galleryData && Array.isArray(galleryData.galleryItems)) ? galleryData.galleryItems : [];
     renderGallery(galleryItems);
-    // 🌟 THE FIX: Call the scroll setup immediately after rendering the gallery.
+    // Call the scroll setup immediately after rendering the gallery.
     setupGalleryScroll(galleryItems.length > 0); 
     
     renderStats();
@@ -466,11 +491,17 @@ async function fetchAndRenderAllData() {
  * @param {Array<object>} members The raw member list.
  */
 function processCommunityData(members) {
+    if (!Array.isArray(members)) {
+        allMembers = [];
+        filteredMembers = [];
+        return;
+    }
+
     // 1. Enrich member data with calculated category and filter for current students
     const enrichedMembers = members.map(member => ({
         ...member,
         // Ensure ID is present for openMemberModal
-        id: member.id || crypto.randomUUID(), 
+        id: member.id || (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`), 
         category: getStudentCategory(member)
     }));
     
@@ -478,7 +509,7 @@ function processCommunityData(members) {
 
     // 2. Calculate statistics
     const currentStudents = allMembers.filter(m => m.category !== 'Alumni' && m.category !== 'Faculty');
-    const uniqueMajors = new Set(currentStudents.map(m => m.major));
+    const uniqueMajors = new Set(currentStudents.map(m => m.major || '').filter(Boolean));
     
     STATS_DATA.totalMembers = currentStudents.length;
     STATS_DATA.majorCount = uniqueMajors.size;
@@ -548,7 +579,8 @@ function handleCommunityFilter(filterValue) {
     filterCommunity();
     closeActiveDropdown(); // For desktop nav
     // Smooth scroll to the community section after filtering
-    document.getElementById('community').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const communityEl = document.getElementById('community');
+    if (communityEl) communityEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /**
@@ -568,8 +600,8 @@ function filterCommunity() {
         
         // Apply search term filter
         const searchMatch = !searchTerm || 
-                             member.name.toLowerCase().includes(searchTerm) ||
-                             member.major.toLowerCase().includes(searchTerm) ||
+                             (member.name && member.name.toLowerCase().includes(searchTerm)) ||
+                             (member.major && member.major.toLowerCase().includes(searchTerm)) ||
                              (member.state && member.state.toLowerCase().includes(searchTerm));
 
         return categoryMatch && searchMatch;
@@ -584,7 +616,7 @@ function filterCommunity() {
     // If a specific student category like 'Final Year' is selected, we keep only those.
 
     // Sort alphabetically by name
-    filteredMembers = tempMembers.sort((a, b) => a.name.localeCompare(b.name));
+    filteredMembers = tempMembers.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     currentPage = 1;
     renderCommunityList();
 }
@@ -609,7 +641,7 @@ function renderCommunityList() {
     if (filteredMembers.length === 0) {
         let message = `No members found matching your criteria.`;
         if (currentFilter !== 'All') {
-            message = `No members found matching your criteria in the **${currentFilter}** group. Try a different filter or search term.`;
+            message = `No members found matching your criteria in the ${currentFilter} group. Try a different filter or search term.`;
         }
         listContainer.innerHTML = `<p class="col-span-full text-center text-lg text-gray-500 py-8">${message}</p>`;
         if (toggleContainer) toggleContainer.classList.add('hidden');
@@ -651,7 +683,8 @@ function toggleCommunityView() {
         // Reset to the initial view (page 1)
         currentPage = 1;
         // Smooth scroll back to the top of the community section for 'View Less'
-        document.getElementById('community').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const communityEl = document.getElementById('community');
+        if (communityEl) communityEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     renderCommunityList();
@@ -688,20 +721,23 @@ function createMemberCard(member) {
             break;
     }
     
-    let infoLine = `${categoryIcon}${member.major}`;
+    let infoLine = `${categoryIcon}${member.major || ''}`;
     if (member.category === 'Graduate Student' && member.programType) {
-        infoLine = `${categoryIcon}${member.programType} - ${member.major}`;
+        infoLine = `${categoryIcon}${member.programType} - ${member.major || ''}`;
     } else if (member.category === 'Alumni' && member.graduationYear) {
             infoLine = `<i class="fas fa-calendar-check text-gold mr-2"></i>Graduated ${member.graduationYear}`;
     }
 
+    // Use a safe ID rendering (string) in case id is not a plain number
+    const safeId = typeof member.id === 'string' ? `'${member.id.replace(/'/g, "\\'")}'` : member.id;
+
     return `
-        <div class="card p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] relative border-b-4 border-gold" onclick="openMemberModal(${member.id})">
+        <div class="card p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] relative border-b-4 border-gold" onclick="openMemberModal(${safeId})">
             ${statusTag}
             <div class="flex flex-col items-center text-center">
-                <img class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-gold/50" src="${profileImage}" alt="${member.name}" onerror="this.onerror=null;this.src='images/avatar-placeholder.jpg';">
-                <h3 class="text-xl font-bold text-primary-blue mb-1">${member.name}</h3>
-                <p class="text-sm font-medium text-text-color mb-2">${member.role}</p>
+                <img class="w-24 h-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-gold/50" src="${profileImage}" alt="${member.name || ''}" onerror="this.onerror=null;this.src='images/avatar-placeholder.jpg';">
+                <h3 class="text-xl font-bold text-primary-blue mb-1">${member.name || 'Unnamed'}</h3>
+                <p class="text-sm font-medium text-text-color mb-2">${member.role || ''}</p>
                 <div class="text-sm text-text-muted mb-3 flex items-center justify-center">
                     ${infoLine}
                 </div>
@@ -736,10 +772,10 @@ function renderLeadership(members) {
     leaders.forEach(leader => {
         const html = `
             <div class="card p-6 rounded-2xl shadow-xl text-center border-t-4 border-primary-blue transform hover:scale-105 transition duration-300">
-                <img class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-gold" src="${leader.profilePic || 'images/avatar-placeholder.jpg'}" alt="${leader.name}" onerror="this.onerror=null;this.src='images/avatar-placeholder.jpg';">
-                <h3 class="text-xl font-bold text-primary-blue mb-1">${leader.name}</h3>
+                <img class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-gold" src="${leader.profilePic || 'images/avatar-placeholder.jpg'}" alt="${leader.name || ''}" onerror="this.onerror=null;this.src='images/avatar-placeholder.jpg';">
+                <h3 class="text-xl font-bold text-primary-blue mb-1">${leader.name || 'Unnamed'}</h3>
                 <p class="text-sm font-medium text-gold mb-3">${leader.leadershipRole || 'Union Leader'}</p>
-                <p class="text-xs text-text-muted">${leader.major}</p>
+                <p class="text-xs text-text-muted">${leader.major || ''}</p>
             </div>
         `;
         leadershipList.innerHTML += html;
@@ -758,6 +794,13 @@ function renderEvents(events) {
     if (!listContainer) return;
     listContainer.innerHTML = '';
     
+    if (!Array.isArray(events) || events.length === 0) {
+        listContainer.innerHTML = '<p class="col-span-full text-center text-lg text-gray-500 py-8">There are no upcoming events currently scheduled. Check back soon!</p>';
+        const countdownBanner = document.getElementById('next-event-countdown-banner');
+        if (countdownBanner) countdownBanner.classList.add('hidden');
+        return;
+    }
+
     // Sort events to put upcoming ones first
     const sortedEvents = events.sort((a, b) => new Date(a.date) - new Date(b.date));
     const now = new Date();
@@ -772,21 +815,16 @@ function renderEvents(events) {
         if (countdownBanner) countdownBanner.classList.add('hidden');
     }
 
-    if (events.length === 0) {
-        listContainer.innerHTML = '<p class="col-span-full text-center text-lg text-gray-500 py-8">There are no upcoming events currently scheduled. Check back soon!</p>';
-        return;
-    }
-    
     // Render the event list
     events.forEach(event => {
         const eventDate = new Date(event.date);
         const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
 
-        const formattedDate = eventDate.toLocaleDateString('en-US', dateOptions);
-        const formattedTime = eventDate.toLocaleTimeString('en-US', timeOptions);
+        const formattedDate = isNaN(eventDate.getTime()) ? 'Date TBD' : eventDate.toLocaleDateString('en-US', dateOptions);
+        const formattedTime = isNaN(eventDate.getTime()) ? '' : eventDate.toLocaleTimeString('en-US', timeOptions);
 
-        const isPast = eventDate < now;
+        const isPast = !isNaN(eventDate.getTime()) && eventDate < now;
         const statusClass = isPast ? 'bg-gray-400' : 'bg-green-500';
         const statusText = isPast ? 'Completed' : 'Upcoming';
         
@@ -795,11 +833,11 @@ function renderEvents(events) {
                 <div>
                     <span class="inline-block ${statusClass} text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">${statusText}</span>
                     <h3 class="text-2xl font-bold text-primary-blue mb-2">${event.title}</h3>
-                    <p class="text-text-color mb-4">${event.description}</p>
+                    <p class="text-text-color mb-4">${event.description || ''}</p>
                 </div>
                 <div class="text-sm space-y-2 pt-4 border-t border-gray-200 dark:border-gray-700">
-                    <p class="text-text-muted"><i class="fas fa-calendar-day w-5 text-gold mr-2"></i>${formattedDate} at ${formattedTime}</p>
-                    <p class="text-text-muted"><i class="fas fa-map-marker-alt w-5 text-gold mr-2"></i>${event.location}</p>
+                    <p class="text-text-muted"><i class="fas fa-calendar-day w-5 text-gold mr-2"></i>${formattedDate}${formattedTime ? ` at ${formattedTime}` : ''}</p>
+                    <p class="text-text-muted"><i class="fas fa-map-marker-alt w-5 text-gold mr-2"></i>${event.location || ''}</p>
                     ${event.link ? `<a href="${event.link}" target="_blank" class="text-primary-blue hover:text-gold font-medium flex items-center mt-2"><i class="fas fa-info-circle w-5 mr-2"></i>More Info</a>` : ''}
                 </div>
             </div>
@@ -815,10 +853,14 @@ function renderEvents(events) {
 function setupCountdown(event) {
     const countdownBanner = document.getElementById('next-event-countdown-banner');
     const eventTitleEl = document.getElementById('countdown-event-title');
+    if (!event || !event.date) {
+        if (countdownBanner) countdownBanner.classList.add('hidden');
+        return;
+    }
     const targetDate = new Date(event.date).getTime();
     
     if (countdownBanner) countdownBanner.classList.remove('hidden');
-    if (eventTitleEl) eventTitleEl.textContent = event.title;
+    if (eventTitleEl) eventTitleEl.textContent = event.title || '';
 
     const updateCountdown = () => {
         const now = new Date().getTime();
@@ -829,8 +871,8 @@ function setupCountdown(event) {
         const minutesEl = document.getElementById('minutes');
         const secondsEl = document.getElementById('seconds');
 
-        if (distance < 0) {
-            clearInterval(window.countdownInterval);
+        if (isNaN(targetDate) || distance < 0) {
+            if (window.countdownInterval) clearInterval(window.countdownInterval);
             if (countdownBanner) countdownBanner.classList.add('hidden');
             // Re-render to clear the timer and potentially find the next event
             fetchAndRenderAllData(); 
@@ -871,14 +913,16 @@ function renderGallery(items) {
 
     listContainer.innerHTML = ''; // Clear loading text
 
-    if (items.length === 0) {
+    if (!Array.isArray(items) || items.length === 0) {
         listContainer.innerHTML = '<p class="col-span-full text-center text-lg text-gray-500 py-8">No photos available at this time.</p>';
         return;
     }
 
     items.forEach(item => {
+        const safeUrl = (item.imageUrl || '').replace(/'/g, "\\'");
+        const safeCaption = (item.caption || '').replace(/'/g, "\\'");
         const html = `
-            <div class="gallery-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2 snap-center cursor-pointer" onclick="openImageModal('${item.imageUrl}', '${item.caption}')">
+            <div class="gallery-item flex-shrink-0 w-full md:w-1/2 lg:w-1/3 p-2 snap-center cursor-pointer" onclick="openImageModal('${safeUrl}', '${safeCaption}')">
                 <div class="card overflow-hidden h-full">
                     <img 
                         src="${item.imageUrl}" 
@@ -910,16 +954,20 @@ function setupGalleryScroll(hasItems) {
     // Clear existing interval
     if (galleryInterval) clearInterval(galleryInterval);
 
+    // Remove previous listeners to avoid duplicates
+    listContainer.replaceWith(listContainer.cloneNode(true));
+    const newContainer = document.getElementById('gallery-list');
+
     // Start the new interval
     galleryInterval = setInterval(() => {
-        scrollGallery(listContainer);
+        scrollGallery(newContainer);
     }, GALLERY_SCROLL_INTERVAL_MS);
 
     // Optional: Pause scrolling on hover/focus
-    listContainer.addEventListener('mouseenter', () => clearInterval(galleryInterval));
-    listContainer.addEventListener('mouseleave', () => {
+    newContainer.addEventListener('mouseenter', () => clearInterval(galleryInterval));
+    newContainer.addEventListener('mouseleave', () => {
         if (hasItems) {
-            galleryInterval = setInterval(() => scrollGallery(listContainer), GALLERY_SCROLL_INTERVAL_MS);
+            galleryInterval = setInterval(() => scrollGallery(newContainer), GALLERY_SCROLL_INTERVAL_MS);
         }
     });
 }
@@ -929,7 +977,7 @@ function setupGalleryScroll(hasItems) {
  * @param {HTMLElement} container The #gallery-list element.
  */
 function scrollGallery(container) {
-    if (!container.firstElementChild) return;
+    if (!container || !container.firstElementChild) return;
 
     // Get the width of one single gallery item (which is w-full of the container's visible area)
     // The clientWidth of the container itself represents the step size for the snap
@@ -959,8 +1007,13 @@ function scrollGallery(container) {
 
 // Call the main setup function when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', () => {
-    // initializeTheme() is called in the body onload attribute, but it's safe to keep it here too, or just rely on the HTML.
+    // Ensure theme is initialized and UI behaviors are wired
+    initializeTheme();
     setupSmoothScrolling();
+
+    // Fetch and render all remote/local JSON data (community, events, gallery)
+    // This ensures the website loads the data from data/community.json, data/events.json, data/gallery.json
+    fetchAndRenderAllData();
 });
 
-// fetchAndRenderAllData() is called via the body onload attribute in index.html.
+// fetchAndRenderAllData() is also safe to be called from body onload if index.html uses that.
